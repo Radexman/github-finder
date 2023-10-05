@@ -1,8 +1,27 @@
-# React + Vite
+# **Github Finder**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app allows users to browse through Github members, search them and check their details.
+This project utilizes Github API to get all the requiered by user querries.
 
-Currently, two official plugins are available:
+## **Tech Stack**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Tailwind CSS
+- Daisyui
+- Vite
+
+### **How To Use**
+
+Download or clone this repo and open it in any code editor.
+
+Run this command in the terminal to open the project on localhost:
+
+```nmp
+npm run dev
+```
+
+To create distribution build run this:
+
+```npm
+npm run build
+```
