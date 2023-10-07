@@ -4,7 +4,7 @@ import Spinner from '../layout/Spinner';
 import UserItem from './UserItem';
 
 const UserResults = () => {
-  const { users, isLoading } = useContext(GithubContext);
+  const { users, isLoading, clearUsers } = useContext(GithubContext);
 
   if (!isLoading) {
     return (
@@ -12,7 +12,10 @@ const UserResults = () => {
         {users.length > 0 && (
           <div className='mb-8 flex flex-col items-center justify-center gap-6 md:flex-row'>
             <h2 className='text-3xl font-bold text-slate-50'>Search Results</h2>
-            <button className='btn btn-primary btn-sm w-full md:w-20'>
+            <button
+              onClick={clearUsers}
+              className='btn btn-primary btn-sm w-full md:w-20'
+            >
               Clear
             </button>
           </div>

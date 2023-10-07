@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const UserItem = ({ user }) => {
   const { login, avatar_url } = user;
   return (
-    <div className='side card compact bg-base-100 text-slate-50 shadow-lg'>
+    <div className='side compact card bg-base-200 text-slate-50 shadow-md shadow-blue-900/90'>
       <div className='card-body flex-row items-center space-x-4'>
         <div>
           <div className='avatar'>

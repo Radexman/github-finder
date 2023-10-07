@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const GithubContext = createContext();
 
 const GITHUB_URL = import.meta.env.VITE_APP_GITHUB_URL;
-// const GITHUB_TOKEN = import.meta.env.VITE_APP_GITHUB_TOKEN;
 
 export const GithubProvider = ({ children }) => {
   const initialState = {
@@ -16,19 +15,13 @@ export const GithubProvider = ({ children }) => {
   const [state, dispatch] = useReducer(githubReducer, initialState);
 
   // Get search results
-
   const searchUsers = async (text) => {
     setLoading();
     const params = new URLSearchParams({
       q: text,
     });
 
-    const response = await fetch(`${GITHUB_URL}/search/users?${params}`, {
-      method: 'GET',
-      // headers: {
-      //   Authorization: `token ${GITHUB_TOKEN}`,
-      // },
-    });
+    const response = await fetch(`${GITHUB_URL}/search/users?${params}`);
 
     const { items } = await response.json();
 
@@ -38,6 +31,10 @@ export const GithubProvider = ({ children }) => {
     });
   };
 
+  // Clear users from state
+  const clearUsers = () => dispatch({ type: 'CLEAR_USERS' });
+
+  // Set loading
   const setLoading = () => dispatch({ type: 'SET_LOADING' });
 
   return (
@@ -46,6 +43,7 @@ export const GithubProvider = ({ children }) => {
         users: state.users,
         isLoading: state.isLoading,
         searchUsers,
+        clearUsers,
       }}
     >
       {children}
