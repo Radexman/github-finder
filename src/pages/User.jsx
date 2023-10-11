@@ -21,7 +21,7 @@ const User = () => {
     location,
     bio,
     blog,
-    twitter_name,
+    twitter_username,
     login,
     html_url,
     followers,
@@ -37,7 +37,7 @@ const User = () => {
 
   return (
     <>
-      <div className='mx-auto mb-36 w-full text-slate-100 lg:w-10/12'>
+      <div className='mx-auto mb-36 w-full text-slate-100 lg:w-11/12'>
         <div className='mb-4'>
           <Link to='/' className='btn btn-outline btn-sm'>
             Back to search
@@ -59,14 +59,18 @@ const User = () => {
 
           <div className='col-span-2 text-slate-100'>
             <div className='mb-6'>
-              <h1 className='card-title text-3xl'>
+              <h1 className='card-title mb-3 text-2xl md:text-3xl'>
                 {name}
                 <div className='badge badge-success ml-2 mr-1'>{type}</div>
                 {hireable && (
                   <div className='badge badge-info mx-1'>Hireable</div>
                 )}
               </h1>
-              <p>{bio}</p>
+              <p>
+                {bio
+                  ? bio
+                  : 'I’m a mysterious individual who has yet to fill out my bio. One thing’s for certain: I love writing code!'}
+              </p>
               <div className='card-actions mt-4'>
                 <a
                   href={html_url}
@@ -77,6 +81,81 @@ const User = () => {
                   Visit Github Profile
                 </a>
               </div>
+            </div>
+
+            <div className='stats stats-vertical w-full rounded-lg bg-base-100 text-slate-100 shadow-md shadow-blue-900/90 md:stats-horizontal'>
+              {location && (
+                <div className='stat'>
+                  <div className='text-md stat-title'>Location</div>
+                  <div className='stat-value text-lg'>{location}</div>
+                </div>
+              )}
+              {blog && (
+                <div className='stat'>
+                  <div className='text-md stat-title'>Website</div>
+                  <div className='stat-value text-lg'>
+                    <a href={blog} target='_blank' rel='noreferrer'>
+                      {`${blog.slice(0, 30)}...`}
+                    </a>
+                  </div>
+                </div>
+              )}
+              {twitter_username && (
+                <div className='stat'>
+                  <div className='text-md stat-title'>Twitter</div>
+                  <div className='stat-value text-lg'>
+                    <a
+                      href={`https://twitter.com/${twitter_username}`}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      {twitter_username}
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className='stats stats-vertical mb-4 w-full rounded-lg bg-base-100 py-5 text-slate-100 shadow-md shadow-blue-900/90 lg:stats-horizontal'>
+          <div className='stat'>
+            <div className='stat-figure text-primary'>
+              <FaUsers className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Followers</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>
+              {followers}
+            </div>
+          </div>
+
+          <div className='stat'>
+            <div className='stat-figure text-primary'>
+              <FaUserFriends className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Following</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>
+              {following}
+            </div>
+          </div>
+
+          <div className='stat'>
+            <div className='stat-figure text-primary'>
+              <FaCodepen className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Public Repos</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>
+              {public_repos}
+            </div>
+          </div>
+
+          <div className='stat'>
+            <div className='stat-figure text-primary'>
+              <FaStore className='text-3xl md:text-5xl' />
+            </div>
+            <div className='stat-title pr-5'>Public Gists</div>
+            <div className='stat-value pr-5 text-3xl md:text-4xl'>
+              {public_gists}
             </div>
           </div>
         </div>
