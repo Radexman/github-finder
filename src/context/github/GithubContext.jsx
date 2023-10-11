@@ -9,6 +9,7 @@ const GITHUB_URL = import.meta.env.VITE_APP_GITHUB_URL;
 export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
+    user: {},
     isLoading: false,
   };
 
@@ -21,7 +22,11 @@ export const GithubProvider = ({ children }) => {
       q: text,
     });
 
-    const response = await fetch(`${GITHUB_URL}/search/users?${params}`);
+    const response = await fetch(`${GITHUB_URL}/search/users?${params}`, {
+      method: 'GET',
+      'User-Agent': 'request',
+      Authorization: 'token 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',
+    });
 
     const { items } = await response.json();
 
@@ -29,6 +34,28 @@ export const GithubProvider = ({ children }) => {
       type: 'GET_USERS',
       payload: items,
     });
+  };
+
+  // Get single user
+  const getUser = async (login) => {
+    setLoading();
+
+    const response = await fetch(`${GITHUB_URL}/users/${login}`, {
+      method: 'GET',
+      'User-Agent': 'request',
+      Authorization: 'token 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',
+    });
+
+    if (response.status === 404) {
+      window.location = './notfound';
+    } else {
+      const data = await response.json();
+
+      dispatch({
+        type: 'GET_USER',
+        payload: data,
+      });
+    }
   };
 
   // Clear users from state
@@ -42,6 +69,8 @@ export const GithubProvider = ({ children }) => {
       value={{
         users: state.users,
         isLoading: state.isLoading,
+        user: state.user,
+        getUser,
         searchUsers,
         clearUsers,
       }}

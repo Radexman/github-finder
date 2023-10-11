@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const UserItem = ({ user }) => {
   const { login, avatar_url } = user;
   return (
-    <div className='side compact card bg-base-200 text-slate-50 shadow-md shadow-blue-900/90'>
+    <div className='side card compact bg-base-200 text-slate-50 shadow-md shadow-blue-900/90'>
       <div className='card-body flex-row items-center space-x-4'>
         <div>
           <div className='avatar'>
@@ -16,7 +16,7 @@ const UserItem = ({ user }) => {
         <div>
           <h3 className='card-title'>{login}</h3>
           <Link
-            to={`/users/${login}`}
+            to={`/user/${login}`}
             className='text-base-content text-opacity-40'
           >
             Visit Profile
