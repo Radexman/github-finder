@@ -19,6 +19,7 @@ export const GithubProvider = ({ children }) => {
   // Get search results
   const searchUsers = async (text) => {
     setLoading();
+
     const params = new URLSearchParams({
       q: text,
     });
@@ -59,21 +60,29 @@ export const GithubProvider = ({ children }) => {
     }
   };
 
-  // Get user repois
+  // Get user repos
   const getUserRepos = async (login) => {
     setLoading();
 
-    const response = await fetch(`${GITHUB_URL}/users/${login}/repos`, {
-      method: 'GET',
-      'User-Agent': 'request',
-      Authorization: 'token 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',
+    const params = new URLSearchParams({
+      sort: 'created',
+      per_page: 10,
     });
 
-    const { items } = await response.json();
+    const response = await fetch(
+      `${GITHUB_URL}/users/${login}/repos?${params}`,
+      {
+        method: 'GET',
+        'User-Agent': 'request',
+        Authorization: 'token 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',
+      },
+    );
+
+    const data = await response.json();
 
     dispatch({
-      type: 'GET_USERS',
-      payload: items,
+      type: 'GET_REPOS',
+      payload: data,
     });
   };
 
@@ -91,6 +100,7 @@ export const GithubProvider = ({ children }) => {
         user: state.user,
         repos: state.repos,
         getUser,
+        getUserRepos,
         searchUsers,
         clearUsers,
       }}
