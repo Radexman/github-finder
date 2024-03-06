@@ -20,7 +20,10 @@ https://github-finder-app-react-tailwindcss.netlify.app/
   <li>Vite modern package bundler</li>
 </ul>
 
-## **Installation**
+## **Data Fetching**
+GitHub Finder utilizes the GitHub API and fetches data via async functions that follow a REST API-like structure.
+
+### **Installation**
 
 1. Clone the repository:
 ```bash
@@ -37,7 +40,7 @@ cd github-finder
 npm install
 ```
 
-## **Usage**
+### **Usage**
 1. Start the development server:
 ```bash
 npm run dev
