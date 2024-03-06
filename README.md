@@ -2,6 +2,9 @@
 
 GitHub Finder is a web application that enables users to browse through GitHub users, check their names, locations, and bios. Users can also click on their external profiles to explore further and view their list of latest repositories that they have been working on recently.
 
+Link to Github Finder
+https://github-finder-app-react-tailwindcss.netlify.app/
+
 ## **Features**
 <ul>
   <li>Browse GitHub users</li>
@@ -21,7 +24,7 @@ GitHub Finder is a web application that enables users to browse through GitHub u
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/github-finder.git
+git clone https://github.com/radexman/github-finder.git
 ```
 
 2. Navigate to the project directory:
