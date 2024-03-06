@@ -17,18 +17,27 @@ GitHub Finder is a web application that enables users to browse through GitHub u
   <li>Vite modern package bundler</li>
 </ul>
 
-### **How To Use**
+## **Installation**
 
-Download or clone this repo and open it in any code editor.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/github-finder.git
+```
 
-Run this command in the terminal to open the project on localhost:
+2. Navigate to the project directory:
+```bash
+cd github-finder
+```
 
-```nmp
+3. Install dependencies:
+```bash
+npm install
+```
+
+## **Usage**
+1. Start the development server:
+```bash
 npm run dev
 ```
 
-To create distribution build run this:
-
-```npm
-npm run build
-```
+2.Open your browser and navigate to http://localhost:3000 to access GitHub Finder.
