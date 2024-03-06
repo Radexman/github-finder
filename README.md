@@ -1,14 +1,16 @@
 # **Github Finder**
 
-This app allows users to browse through Github members, search them and check their details.
-This project utilizes Github API to get all the requiered by user querries.
+GitHub Finder is a web application that enables users to browse through GitHub users, check their names, locations, and bios. Users can also click on their external profiles to explore further and view their list of latest repositories that they have been working on recently.
 
-## **Tech Stack**
-
-- React
-- Tailwind CSS
-- Daisyui
-- Vite
+## **Features**
+Browse GitHub users
+View user information such as name, location, and bio
+Explore external profiles
+Check a user's list of latest repositories
+## **Technologies Used**
+React framework
+Tailwind CSS framework with Daisy UI component library
+Vite modern package bundler
 
 ### **How To Use**
 
