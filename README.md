@@ -11,9 +11,11 @@ GitHub Finder is a web application that enables users to browse through GitHub u
 </ul>
 
 ## **Technologies Used**
-React framework
-Tailwind CSS framework with Daisy UI component library
-Vite modern package bundler
+<ul>
+  <li>React framework</li>
+  <li>Tailwind CSS framework with Daisy UI component library</li>
+  <li>Vite modern package bundler</li>
+</ul>
 
 ### **How To Use**
 
