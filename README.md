@@ -2,7 +2,7 @@
 
 GitHub Finder is a web application that enables users to browse through GitHub users, check their names, locations, and bios. Users can also click on their external profiles to explore further and view their list of latest repositories that they have been working on recently.
 
-Link to Github Finder
+Link to Github Finder: </br>
 https://github-finder-app-react-tailwindcss.netlify.app/
 
 ## **Features**
@@ -43,4 +43,4 @@ npm install
 npm run dev
 ```
 
-2.Open your browser and navigate to http://localhost:3000 to access GitHub Finder.
+2. Open your browser and navigate to http://localhost:3000 to access GitHub Finder.
