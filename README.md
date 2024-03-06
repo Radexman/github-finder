@@ -11,6 +11,7 @@ https://github-finder-app-react-tailwindcss.netlify.app/
   <li>View user information such as name, location, and bio</li>
   <li>Explore external profiles</li>
   <li>Check a user's list of latest repositories</li>
+  <li>Account statistics, followers, repos, gists</li>
 </ul>
 
 ## **Technologies Used**
